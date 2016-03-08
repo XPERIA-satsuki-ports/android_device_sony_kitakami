@@ -1,30 +1,54 @@
 #include <stdlib.h>
 
-// The devices to init for Xperia Z
+// The devices to init for Xperia Z5
 const char *mr_init_devices[] = {
     "/sys/class/graphics/fb0",
-    "/sys/class/graphics/fb1",
-    "/sys/class/graphics/fb2",
-    "/sys/class/misc/android_adb",
-    "/sys/class/android_usb/android0/f_adb",
-    "/sys/class/tty/ptmx",
-    "/sys/class/misc/uinput",
-    "/sys/class/input/input*",
-    "/sys/class/input/event*",
 
-    // storage devices
-    "/sys/dev/block*",
     "/sys/block/mmcblk0",
+    "/sys/block/mmcblk0rpmb",
+    "/sys/devices/soc.0/f9824900.sdhci",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc*"
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0",
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001",
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/*",
+    "/dev/block/bootdevice/by-name/*",
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p34", // boot
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p38", // cache
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p1", // modem
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p32", // persist
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p43", // system
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p44", // userdata
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p33", // metadata
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p30", // ssd
+    "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0rpmb", // RPMB
+    "/sys/bus/mmc",
+    "/sys/bus/mmc/drivers/mmcblk",
     "/sys/module/mmc_core",
     "/sys/module/mmcblk",
-    
-    // You look like SD Card and external USB Stuff
-    "/devices/msm_sdcc.2/mmc_host*",
-    "/devices/msm_sdcc.3/mmc_host*",
-    "/devices/platform/xhci-hcd",
 
-    "/sys/bus*",
-    "/sys/devices*",
+    // for keys and touchscreen
+    "/sys/devices/soc.0/gpio_keys.79/input*",
+    "/sys/devices/virtual/input*",
+    "/sys/devices/virtual/misc/uinput",
+    "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0070/input*",
+
+    // for adb
+    "/sys/devices/virtual/tty/ptmx",
+    "/sys/devices/virtual/misc/android_adb",
+    "/sys/devices/virtual/android_usb/android0/f_adb",
+    "/sys/bus/usb",
+
+    // USB drive is in here
+    // NO IDEA FIX "/sys/devices/platform/xhci-hcd*",
+
+    // Encryption
+    "/sys/devices/virtual/misc/device-mapper",
+    "/sys/devices/virtual/misc/ion",
+    "/sys/devices/virtual/qseecom/qseecom",
+
+    // Logging
+    "/sys/devices/virtual/pmsg/pmsg0",
 
     NULL
 };
