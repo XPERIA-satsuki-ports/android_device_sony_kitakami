@@ -6,12 +6,20 @@ const char *mr_init_devices[] = {
 
     "/sys/block/mmcblk0",
     "/sys/block/mmcblk0rpmb",
+    "/sys/block/mmcblk1",
     "/sys/devices/soc.0/f9824900.sdhci",
+    "/sys/devices/soc.0/f98a4900.sdhci",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc*"
     "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc*"
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc1",
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc1/mmc0:*",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc1/mmc0:e624",
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc1/mmc0:e624/block/mmcblk1",
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/*",
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc1/mmc0:e624/block/mmcblk1/*",
     "/dev/block/bootdevice/by-name/*",
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p29", // boot
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p41", // cache
@@ -21,10 +29,13 @@ const char *mr_init_devices[] = {
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p42", // userdata
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p14", // ssd
     "/sys/devices/soc.0/f9824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0rpmb", // RPMB
+    "/sys/devices/soc.0/f98a4900.sdhci/mmc_host/mmc1/mmc0:e624/block/mmcblk1/mmcblk1p1", // SD Card
     "/sys/bus/mmc",
     "/sys/bus/mmc/drivers/mmcblk",
     "/sys/module/mmc_core",
     "/sys/module/mmcblk",
+    "/sys/bus*",
+    "/sys/devices*",
 
     // for keys and touchscreen
     "/sys/devices/soc.0/gpio_keys.79/input*",
@@ -37,9 +48,12 @@ const char *mr_init_devices[] = {
     "/sys/devices/virtual/misc/android_adb",
     "/sys/devices/virtual/android_usb/android0/f_adb",
     "/sys/bus/usb",
-
-    // USB drive is in here
-    // NO IDEA FIX "/sys/devices/platform/xhci-hcd*",
+    "/sys/bus/usb-serial",
+    "/sys/devices/virtual/misc/mtp_usb",
+    "/sys/devices/platform/android_usb/usb_function_switch",
+    
+    // USB
+    "/sys/devices/soc.0/f9200000.ssusb/f9200000.dwc3/xhci-hcd.*",
 
     // Encryption
     "/sys/devices/virtual/misc/device-mapper",
