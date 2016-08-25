@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 TARGET_BOARD_PLATFORM := msm8994
 
@@ -32,7 +34,7 @@ TARGET_USES_64_BIT_BCMDHD := true
 
 ENABLE_CPUSETS := true
 
-TARGET_KERNEL_SOURCE := kernel/sony/
+TARGET_KERNEL_SOURCE := kernel/sony
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
