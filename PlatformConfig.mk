@@ -88,6 +88,9 @@ WITH_DEXPREOPT := false
 # Props for hotplugging
 TARGET_SYSTEM_PROP += device/sony/kitakami/system.prop
 
+# Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+
 # SELinux
 BOARD_SEPOLICY_DIRS += device/sony/kitakami/sepolicy
 
