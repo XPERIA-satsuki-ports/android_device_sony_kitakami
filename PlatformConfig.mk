@@ -80,10 +80,7 @@ BOARD_CUSTOM_BT_CONFIG := device/sony/kitakami/bluetooth/vnd_generic.txt
 TARGET_PER_MGR_ENABLED := true
 
 # NFC
-BOARD_NFC_CHIPSET := pn547
-
-# Disable Dexpreopt
-WITH_DEXPREOPT := false
+NFC_NXP_CHIP_TYPE := PN547C2
 
 # Props for hotplugging
 TARGET_SYSTEM_PROP += device/sony/kitakami/system.prop
