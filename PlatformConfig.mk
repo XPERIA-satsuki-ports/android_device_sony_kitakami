@@ -22,19 +22,34 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_FEATURES := crc
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53.a57
+TARGET_2ND_CPU_FEATURES := div,atomic_ldrd_strd
 
 TARGET_USES_64_BIT_BINDER := true
 TARGET_USES_64_BIT_BCMDHD := true
 
 ENABLE_CPUSETS := true
 
+### Kernel Compile ###
 TARGET_KERNEL_SOURCE := kernel/sony
+
+# Enable Xperia-Z5P-RR custome defconfig
+TARGET_KERNEL_ADDITIONAL_CONFIG := custom_defconfig
+
+### Optimize Build ###
+# If using UBERTC, available versions are 4.9, 5.x, 6.x and 7.0
+KERNEL_TOOLCHAIN_VERSION := 5.x
+KERNEL_TOOKCHAIN := prebuilts/gcc/${HOST_OS}-x86/aarch64/aarch64-linux-android-${KERNEL_TOOLCHAIN_VERSION}-kernel/
+
+STRICT_ALIASING := true
+POLLY_OPTS := true
+GRAPHITE_OPTS := true
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
