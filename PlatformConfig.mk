@@ -107,6 +107,7 @@ MR_FSTAB := device/sony/kitakami/rootdir/twrp.fstab
 MR_USE_MROM_FSTAB := true
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
 MR_PIXEL_FORMAT := "RGBX_8888"
+MR_KEXEC_MEM_MIN := 0x0ff00000
 
 # Wi-Fi definitions for Broadcom solution
 BOARD_WLAN_DEVICE           := bcmdhd
