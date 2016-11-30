@@ -76,6 +76,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 ### TWRP ###
 ifeq ($(RECOVERY_VARIANT),twrp)
+# This is sony/aosp/LA.BF64.1.2.2 based
+# LA.BR.1.3.3 has display issue on TWRP.
+TARGET_KERNEL_SOURCE := kernel/sony-recovery
 TARGET_RECOVERY_IS_MULTIROM := true
 TARGET_TWRP_FSTAB := true
 PROJECT_PATH_AGREES := true
