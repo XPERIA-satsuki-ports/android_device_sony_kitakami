@@ -45,7 +45,7 @@ TARGET_KERNEL_ADDITIONAL_CONFIG := custom_defconfig
 ### Optimize Build ###
 # If using UBERTC, available versions are 4.9, 5.x, 6.x and 7.0
 KERNEL_TOOLCHAIN_VERSION := 5.x
-KERNEL_TOOKCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-$(KERNEL_TOOLCHAIN_VERSION)-kernel/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-$(KERNEL_TOOLCHAIN_VERSION)-kernel/bin
 KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 
 STRICT_ALIASING := true
